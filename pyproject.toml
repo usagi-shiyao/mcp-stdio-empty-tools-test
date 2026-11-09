@@ -1,0 +1,20 @@
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-stdio-empty-tools-test"
+version = "0.1.0"
+description = "A minimal MCP Stdio server with no registered tools for connection testing."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0,<2"
+]
+
+[project.scripts]
+mcp-stdio-empty-tools-test = "server:main"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["server.py"]
